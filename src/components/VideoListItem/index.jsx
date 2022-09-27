@@ -35,7 +35,7 @@ const VideoListItem = ({ videoItem, playlistId }) => {
           )}
         </div>
         <div className={styles.video_thumb}>
-          <img src={thumbnail.url} alt="" />
+          <img src={thumbnail?.url} alt="" />
         </div>
         <div className={styles.video_title}>
           <span>{title}</span>
