@@ -13,6 +13,10 @@ const playlistModel = {
     state.error = payload;
   }),
   addPlaylist: action((state, payload) => {
+    if (Object.keys(state.playlists).length > 20) {
+      setError("You can add max 20 playlists");
+      return;
+    }
     if (!state.playlists[payload.id]) {
       state.playlists[payload.id] = payload;
       toast.success("Playlist Added Successfuly!");
@@ -22,7 +26,7 @@ const playlistModel = {
   }),
   removePlaylist: action((state, id) => {
     delete state.playlists[id];
-    toast.success("Playlist removed");
+    toast.error("Playlist removed");
   }),
   getPlaylist: thunk(async (actions, playlistId) => {
     try {

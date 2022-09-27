@@ -23,7 +23,6 @@ const PlaylistItem = () => {
     publishedAt,
     itemCount,
     playlistVideos,
-    chanelId,
     channelTitle,
   } = playlist;
 
