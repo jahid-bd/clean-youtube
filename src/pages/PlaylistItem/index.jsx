@@ -24,6 +24,7 @@ const PlaylistItem = () => {
     itemCount,
     playlistVideos,
     channelTitle,
+    channelId,
   } = playlist;
 
   const { id: firstVideoId } = playlistVideos[0];
@@ -77,9 +78,7 @@ const PlaylistItem = () => {
               <div className={styles.fav_chan}>
                 <div className={styles.channel}>
                   <a
-                    href={`https://www.youtube.com/c/${channelTitle
-                      .split(" ")
-                      .join("")}`}
+                    href={`https://www.youtube.com/channel/${channelId}`}
                     target={"_blank"}
                   >
                     {channelTitle}

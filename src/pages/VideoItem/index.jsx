@@ -11,7 +11,8 @@ const VideoItem = () => {
   const { videoId, playlistId } = useParams();
   const navigate = useNavigate();
   const { playlists } = useStoreState((state) => state.playlists);
-  const { playlistVideos, itemCount, channelTitle } = playlists[playlistId];
+  const { playlistVideos, itemCount, channelTitle, channelId } =
+    playlists[playlistId];
   const videoItem = playlistVideos.find((item) => item.id === videoId);
 
   const {
@@ -89,9 +90,7 @@ const VideoItem = () => {
               <div className={styles.fav_chan}>
                 <div className={styles.channel}>
                   <a
-                    href={`https://www.youtube.com/c/${channelTitle
-                      .split(" ")
-                      .join("")}`}
+                    href={`https://www.youtube.com/c/${channelId}`}
                     target={"_blank"}
                   >
                     {channelTitle}
