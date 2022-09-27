@@ -1,0 +1,116 @@
+/* Preset CSS */
+*,
+*:before,
+*:after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body,
+html {
+  font-family: CircularStdBook;
+  font-weight: normal;
+  font-size: 1rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*---------------------------------------------*/
+a {
+  cursor: pointer;
+}
+a:focus {
+  outline: none;
+}
+a:hover {
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+/*---------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0px;
+  list-style-type: none;
+}
+i,
+svg {
+  margin: 0;
+  padding: 0;
+}
+/*---------------------------------------------*/
+input,
+textarea,
+label {
+  display: block;
+  outline: none;
+  border: none;
+}
+
+/*---------------------------------------------*/
+button {
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+iframe {
+  border: none;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "CircularStdBlack";
+  src: url("../assets/fonts/CircularStd-Black.woff2") format("woff2"),
+    url("../assets/fonts/CircularStd-Black.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CircularStdBold";
+  src: url("../assets/fonts/CircularStd-Bold.woff2") format("woff2"),
+    url("../assets/fonts/CircularStd-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CircularStdMedium";
+  src: url("../assets/fonts/CircularStd-Medium.woff2") format("woff2"),
+    url("../assets/fonts/CircularStd-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CircularStdBook";
+  src: url("../assets/fonts/CircularStd-Book.woff2") format("woff2"),
+    url("../assets/fonts/CircularStd-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "jira";
+  src: url("../assets/fonts/jira.woff") format("truetype"),
+    url("../assets/fonts/jira.ttf") format("woff"),
+    url("./assets/fonts/jira.svg#jira") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
