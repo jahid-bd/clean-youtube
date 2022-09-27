@@ -90,7 +90,7 @@ const VideoItem = () => {
               <div className={styles.fav_chan}>
                 <div className={styles.channel}>
                   <a
-                    href={`https://www.youtube.com/c/${channelId}`}
+                    href={`https://www.youtube.com/channel/${channelId}`}
                     target={"_blank"}
                   >
                     {channelTitle}
