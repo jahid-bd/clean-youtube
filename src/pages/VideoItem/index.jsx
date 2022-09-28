@@ -24,11 +24,11 @@ const VideoItem = () => {
   } = videoItem;
 
   let width = "100%";
-  let height = "390px";
+  let height = "450px";
 
   if (window.innerWidth < 425) {
     height = "200px";
-    width = "350px";
+    width = "300px";
   }
 
   const opts = {
@@ -63,7 +63,6 @@ const VideoItem = () => {
   };
 
   const handleOnEnd = () => {
-    console.log("Ended");
     const index = playlistVideos.findIndex((item) => item.id === videoId);
     if (index - 1 < playlistVideos.length) {
       const nextVideoId = playlistVideos[index + 1].id;

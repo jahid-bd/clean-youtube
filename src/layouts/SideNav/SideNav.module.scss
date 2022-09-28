@@ -64,3 +64,13 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .sidenav {
+    width: 60px;
+  }
+  .menu_icon,
+  .logo {
+    font-size: 20px;
+  }
+}

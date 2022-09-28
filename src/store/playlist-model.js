@@ -23,6 +23,7 @@ const playlistModel = persist(
         toast.success("Playlist Added Successfuly!");
       } else {
         state.error = "The plalist already exist!";
+        throw new Error();
       }
     }),
     removePlaylist: action((state, id) => {

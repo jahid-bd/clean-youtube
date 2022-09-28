@@ -96,12 +96,31 @@
 
 @media (max-width: 900px) {
   .playlist_item {
+    margin: 15px 0;
     height: 100%;
     overflow: auto;
     .playlist_cover_section,
     .playlist_video_section {
       overflow: hidden;
       height: 100%;
+    }
+    .playlist_cover_section {
+      .details {
+        .title {
+          font-size: 18px;
+          text-align: left;
+        }
+        .fav_chan {
+          .channel a {
+            padding: 9px 7px;
+            font-size: 10px;
+          }
+        }
+
+        .description {
+          font-size: 12px;
+        }
+      }
     }
   }
 }

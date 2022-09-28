@@ -38,7 +38,11 @@ const VideoListItem = ({ videoItem, playlistId }) => {
           <img src={thumbnail?.url} alt="" />
         </div>
         <div className={styles.video_title}>
-          <span>{title}</span>
+          <span>
+            {window.innerWidth < 576 && title.length > 50
+              ? title.substr(0, 50) + "..."
+              : title}
+          </span>
         </div>
       </div>
     </Link>

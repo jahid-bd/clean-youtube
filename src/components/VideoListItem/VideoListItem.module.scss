@@ -23,3 +23,17 @@
     }
   }
 }
+
+@media (max-width: 900px) {
+  .video_list_item {
+    padding: 15px 7px;
+    font-size: 13px;
+  }
+  .video_num {
+    font-size: 16px;
+  }
+  .video_thumb img {
+    width: 70px;
+    height: 50px;
+  }
+}

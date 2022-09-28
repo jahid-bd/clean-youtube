@@ -12,6 +12,7 @@ const PlaylistCard = ({ playlist }) => {
     (actions) => actions.favorites
   );
   const { favorites } = useStoreState((state) => state.favorites);
+
   const handleFavorite = () => {
     if (favorites.includes(id)) {
       removeToFavorite(id);

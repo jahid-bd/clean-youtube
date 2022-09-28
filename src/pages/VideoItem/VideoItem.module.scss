@@ -61,12 +61,36 @@
 
 @media (max-width: 900px) {
   .video_item {
+    margin: 15px 0;
     height: 100%;
-    overflow: auto;
+    overflow-x: hidden;
     .video_player_section,
     .video_item_section {
       overflow: hidden;
       height: 100%;
+    }
+    .video_player_section {
+      .details {
+        .title {
+          font-size: 18px;
+          text-align: left;
+        }
+        .fav_chan {
+          justify-content: left;
+          gap: 100px;
+          .channel a {
+            padding: 9px 7px;
+            font-size: 10px;
+          }
+        }
+        .info {
+          justify-content: left;
+          gap: 20px;
+        }
+        .description {
+          font-size: 12px;
+        }
+      }
     }
   }
 }
