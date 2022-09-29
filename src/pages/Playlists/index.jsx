@@ -22,7 +22,9 @@ const Playlists = () => {
                 sm={6}
                 lg={3}
                 md={4}
+                xl={2}
                 sx={{ marginBottom: "10px" }}
+                key={playlist.id}
               >
                 <PlaylistCard playlist={playlist} />
               </Grid>

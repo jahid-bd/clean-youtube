@@ -2,9 +2,10 @@ import { Grid } from "@mui/material";
 import { format } from "date-fns";
 import { useStoreActions, useStoreState } from "easy-peasy";
 import { MdFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
+import ReactPlayer from "react-player";
 import { useNavigate, useParams } from "react-router-dom";
-import YouTube from "react-youtube";
 import VideoListItem from "../../components/VideoListItem";
+import "./responsive-player.css";
 import styles from "./VideoItem.module.scss";
 
 const VideoItem = () => {
@@ -13,7 +14,7 @@ const VideoItem = () => {
   const { playlists } = useStoreState((state) => state.playlists);
   const { playlistVideos, itemCount, channelTitle, channelId } =
     playlists[playlistId];
-  const videoItem = playlistVideos.find((item) => item.id === videoId);
+  const videoItem = playlistVideos.find((item) => item.videoId === videoId);
 
   const {
     title,
@@ -22,27 +23,6 @@ const VideoItem = () => {
     position,
     videoId: id,
   } = videoItem;
-
-  let width = "100%";
-  let height = "450px";
-
-  if (window.innerWidth < 425) {
-    height = "200px";
-    width = "300px";
-  }
-
-  const opts = {
-    height: height,
-    width: width,
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    },
-  };
-
-  const onReady = (event) => {
-    event.target.playVideo();
-  };
 
   const publisedDate = format(
     new Date(String(videoPublishedAt)),
@@ -63,9 +43,9 @@ const VideoItem = () => {
   };
 
   const handleOnEnd = () => {
-    const index = playlistVideos.findIndex((item) => item.id === videoId);
+    const index = playlistVideos.findIndex((item) => item.videoId === videoId);
     if (index - 1 < playlistVideos.length) {
-      const nextVideoId = playlistVideos[index + 1].id;
+      const nextVideoId = playlistVideos[index + 1].videoId;
       navigate(`/${playlistId}/${nextVideoId}`);
     }
   };
@@ -76,13 +56,17 @@ const VideoItem = () => {
         <Grid item md={8}>
           <div className={styles.video_player_section}>
             <div className={styles.player}>
-              <YouTube
-                videoId={id}
-                opts={opts}
-                onReady={onReady}
-                title={title}
-                onEnd={handleOnEnd}
-              />
+              <div className="player-wrapper">
+                <ReactPlayer
+                  controls={true}
+                  className={"react-player"}
+                  url={`https://www.youtube.com/watch?v=${id}`}
+                  width={"100%"}
+                  height={"100%"}
+                  playing={true}
+                  onEnded={handleOnEnd}
+                />
+              </div>
             </div>
             <div className={styles.details}>
               <div className={styles.title}>{title}</div>
@@ -130,7 +114,7 @@ const VideoItem = () => {
             {playlistVideos.map((item) => (
               <VideoListItem
                 videoItem={item}
-                key={item.id}
+                key={item.videoId}
                 playlistId={playlistId}
               />
             ))}

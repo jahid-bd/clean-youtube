@@ -37,7 +37,6 @@ const getPlaylist = async (playlistId) => {
 
   playlistVideos = playlistVideos.map((item) => {
     const {
-      id,
       contentDetails: { videoId, videoPublishedAt },
       snippet: {
         title,
@@ -50,7 +49,6 @@ const getPlaylist = async (playlistId) => {
     } = item;
 
     return {
-      id,
       videoId,
       videoPublishedAt,
       title,

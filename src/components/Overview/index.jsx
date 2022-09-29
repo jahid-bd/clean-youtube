@@ -17,11 +17,11 @@ useState;
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
+    breakpoint: { max: 4000, min: 1441 },
+    items: 7,
   },
   desktop: {
-    breakpoint: { max: 3000, min: 1025 },
+    breakpoint: { max: 1440, min: 1025 },
     items: 4,
   },
   laptop: {

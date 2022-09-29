@@ -27,7 +27,7 @@ const PlaylistItem = () => {
     channelId,
   } = playlist;
 
-  const { id: firstVideoId } = playlistVideos[0];
+  const { videoId: firstVideoId } = playlistVideos[0];
 
   const publisedDate = format(new Date(String(publishedAt)), "LL MMM yyyy");
 
@@ -115,7 +115,11 @@ const PlaylistItem = () => {
         <Grid item md={7}>
           <div className={styles.playlist_video_section}>
             {playlistVideos.map((item) => (
-              <VideoListItem videoItem={item} key={item.id} playlistId={id} />
+              <VideoListItem
+                videoItem={item}
+                key={item.videoId}
+                playlistId={id}
+              />
             ))}
           </div>
         </Grid>

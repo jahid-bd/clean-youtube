@@ -2,7 +2,6 @@ import { useStoreActions, useStoreState } from "easy-peasy";
 import { IoIosPlay } from "react-icons/io";
 import { MdPlaylistPlay } from "react-icons/md";
 import { Link } from "react-router-dom";
-
 import MoreInfo from "../MoreInfo";
 import styles from "./PlaylistCard.module.scss";
 
@@ -25,7 +24,7 @@ const PlaylistCard = ({ playlist }) => {
     addToRecent(id);
   };
 
-  const { id: firstVideoId } = playlistVideos[0];
+  const { videoId: firstVideoId } = playlistVideos[0];
   return (
     <div className={styles.playlist_card}>
       <Link to={`/${id}/${firstVideoId}`} onClick={handleAddRecent}>

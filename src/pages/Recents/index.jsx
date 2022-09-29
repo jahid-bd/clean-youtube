@@ -16,7 +16,7 @@ const Recents = () => {
         <Grid container spacing={1} sx={{ marginBottom: "10px" }}>
           {recentPlaylists.length > 0 ? (
             recentPlaylists.map((playlist) => (
-              <Grid item xs={12} sm={6} lg={3} md={4}>
+              <Grid item xs={12} sm={6} lg={3} md={4} xl={2} key={playlist.id}>
                 <PlaylistCard playlist={playlist} />
               </Grid>
             ))

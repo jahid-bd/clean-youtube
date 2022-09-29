@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import styles from "./VideoListItem.module.scss";
 
 const VideoListItem = ({ videoItem, playlistId }) => {
-  const { thumbnail, title, position, id } = videoItem;
+  const { thumbnail, title, position, videoId: id } = videoItem;
   const { videoId } = useParams();
 
   const isActive = videoId === id;

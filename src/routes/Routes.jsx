@@ -16,9 +16,9 @@ const Routes = () => {
         <Route path="/recents" element={<Recents />} />
         <Route path="/playlists" element={<Playlists />} />
         <Route path="/favorites" element={<Favorites />} />
-        <Route path="*" element={<NotFound />} />
         <Route path="/:playlistId" element={<PlaylistItem />} />
         <Route path="/:playlistId/:videoId" element={<VideoItem />} />
+        <Route path="*" element={<NotFound />} />
       </Router>
     </Layout>
   );
