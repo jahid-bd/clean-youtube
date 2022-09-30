@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import { useStoreState } from "easy-peasy";
+import NoPlaylist from "../../components/NoPlaylist";
 import PlaylistCard from "../../components/PlaylistCard";
 
 const Recents = () => {
@@ -21,7 +22,7 @@ const Recents = () => {
               </Grid>
             ))
           ) : (
-            <h3>No Playlists</h3>
+            <NoPlaylist />
           )}
         </Grid>
       </div>

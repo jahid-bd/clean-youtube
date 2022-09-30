@@ -9,6 +9,7 @@ import {
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link as RouterLink } from "react-router-dom";
+import NoPlaylist from "../NoPlaylist";
 import PlaylistCard from "../PlaylistCard";
 import { CustomLeftArrow, CustomRightArrow } from "./CarouselBtn";
 import styles from "./Overview.module.scss";
@@ -97,18 +98,7 @@ const Overview = ({ type, playlists }) => {
               <PlaylistCard playlist={playlist} key={playlist.id} type={type} />
             ))
           ) : (
-            <div>
-              <h3>No Playlists</h3>
-              {type === "playlist" && (
-                <Button
-                  variant="outlined"
-                  sx={{ marginTop: "10px" }}
-                  onClick={() => setOpen()}
-                >
-                  Add Playlist
-                </Button>
-              )}
-            </div>
+            <NoPlaylist type={type} setOpen={setOpen} />
           )}
         </Carousel>
       </div>

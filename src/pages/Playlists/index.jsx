@@ -1,5 +1,6 @@
-import { Button, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { useStoreActions, useStoreState } from "easy-peasy";
+import NoPlaylist from "../../components/NoPlaylist";
 import PlaylistCard from "../../components/PlaylistCard";
 
 const Playlists = () => {
@@ -30,16 +31,7 @@ const Playlists = () => {
               </Grid>
             ))
           ) : (
-            <div>
-              <h3>No Playlist</h3>
-              <Button
-                variant="outlined"
-                sx={{ marginTop: "10px" }}
-                onClick={() => setOpen()}
-              >
-                Add Playlist
-              </Button>
-            </div>
+            <NoPlaylist type={"playlist"} setOpen={setOpen} />
           )}
         </Grid>
       </div>
